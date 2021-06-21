@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gerbert_shild;
 
 public class Deadlock implements Runnable {
     A a = new A();
