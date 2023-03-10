@@ -1,5 +1,6 @@
 package org.example.pdf_lessons.executor;
 
+import java.io.FileNotFoundException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -12,6 +13,7 @@ public class ScheduledExecutorServiceExample {
     public static void main(String[] args) {
 
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+        //ThreadPoolTaskExecutor
         Runnable task = () -> System.out.println("Hello from " + Thread.currentThread().getName());
         ScheduledFuture sf = executor.scheduleAtFixedRate(task, 0, 2, TimeUnit.SECONDS);
         try {
@@ -24,9 +26,9 @@ public class ScheduledExecutorServiceExample {
 
         try {
             System.out.println("attempt to shutdown executor");
-            executor.shutdown();
-            //wait 3 seconds for completion
             executor.awaitTermination(3, TimeUnit.SECONDS);
+            //wait 3 seconds for completion
+            executor.shutdown();
         } catch (InterruptedException e) {
             System.err.println("tasks interrupted");
         } finally {

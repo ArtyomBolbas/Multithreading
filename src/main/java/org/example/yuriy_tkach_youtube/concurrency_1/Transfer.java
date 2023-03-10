@@ -1,5 +1,8 @@
 package org.example.yuriy_tkach_youtube.concurrency_1;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,7 +16,8 @@ public class Transfer {
         }
         System.out.println("Before " + Thread.currentThread().getName() + ". Balance of [" + variableName + "] = " + accountFrom.getBalance());
         System.out.println("Before " + Thread.currentThread().getName() + ". Balance of [" + variableName2 + "] = " + accountTo.getBalance());
-
+//        Collection
+        //HashSet
 //        synchronized (accountFrom) {
 //            try {
 //                Thread.sleep(1000);
